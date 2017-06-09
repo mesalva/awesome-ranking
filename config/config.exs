@@ -12,7 +12,7 @@ config :awesome_ranking,
 # Configures the endpoint
 config :awesome_ranking, AwesomeRanking.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "dbqW1kr1cXGX6gdGEhCPEt4tTCZ9OEeZScmSAlmqlk+40ywGKbXjPLwj90JXe+EE",
+  secret_key_base: "PrvxOuQpAj8qJK8oAxGMIYUI1wMWHSmrcfwsBG7lTU/ObUWxXO1x1XuFd3o7gQGH",
   render_errors: [view: AwesomeRanking.ErrorView, accepts: ~w(html json)],
   pubsub: [name: AwesomeRanking.PubSub,
            adapter: Phoenix.PubSub.PG2]

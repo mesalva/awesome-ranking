@@ -36,7 +36,7 @@ defmodule AwesomeRanking.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_awesome_ranking_key",
-    signing_salt: "NTtDhX2j"
+    signing_salt: "G19YSunI"
 
   plug AwesomeRanking.Router
 end

@@ -39,5 +39,5 @@ config :awesome_ranking, AwesomeRanking.Repo,
   username: "postgres",
   password: "postgres",
   database: "awesome_ranking_dev",
-  hostname: "localhost",
+  hostname: "0.0.0.0",
   pool_size: 10
