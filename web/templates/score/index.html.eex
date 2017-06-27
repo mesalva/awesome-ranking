@@ -1,0 +1,21 @@
+<h2>Listing scores</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Points</th>
+      <th>User</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for score <- @scores do %>
+    <tr>
+      <td><%= score.points %></td>
+      <td><%= score.user_id %></td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>

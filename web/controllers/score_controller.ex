@@ -5,7 +5,7 @@ defmodule AwesomeRanking.ScoreController do
 
   def index(conn, _params) do
     scores = Repo.all(Score)
-    render(conn, "index.json", scores: scores)
+    render(conn, "index.html", scores: scores)
   end
 
   def create(conn, %{"score" => score_params}) do
@@ -21,6 +21,7 @@ defmodule AwesomeRanking.ScoreController do
         conn
         |> put_status(:unprocessable_entity)
         |> render(AwesomeRanking.ChangesetView, "error.json", changeset: changeset)
+
     end
   end
 

@@ -5,13 +5,13 @@ defmodule AwesomeRanking.ScoreControllerTest do
   alias AwesomeRanking.Score
   @invalid_attrs %{}
 
-  setup %{conn: conn} do
-    {:ok, conn: put_req_header(conn, "accept", "application/json")}
-  end
+  # setup %{conn: conn} do
+  #   {:ok, conn: put_req_header(conn, "accept", "application/json")}
+  # end
 
   test "lists all entries on index", %{conn: conn} do
     conn = get conn, score_path(conn, :index)
-    assert json_response(conn, 200)["data"] == []
+    assert html_response(conn, 200) =~ "Listing scores"
   end
 
   test "creates resource when data is valid", %{conn: conn} do

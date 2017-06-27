@@ -1,9 +1,9 @@
 defmodule AwesomeRanking.ScoreView do
   use AwesomeRanking.Web, :view
 
-  def render("index.json", %{scores: scores}) do
-    %{data: render_many(scores, AwesomeRanking.ScoreView, "score.json")}
-  end
+  # def render("index.html", %{scores: scores}) do
+    # %{data: render_many(scores, AwesomeRanking.ScoreView, "score.html")}
+  # end
 
   def render("show.json", %{score: score}) do
     %{data: render_one(score, AwesomeRanking.ScoreView, "score.json")}

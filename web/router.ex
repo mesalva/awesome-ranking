@@ -11,19 +11,19 @@ defmodule AwesomeRanking.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    resources "/users", AwesomeRanking.UserController, except: [:new, :edit]
-    resources "/scores", AwesomeRanking.ScoreController, except: [:new, :edit, :delete]
   end
 
   scope "/", AwesomeRanking do
     pipe_through :browser # Use the default browser stack
-
+    get "/scores", ScoreController, :index
     get "/", PageController, :index
   end
 
 
   # Other scopes may use custom stacks.
-  # scope "/api", AwesomeRanking do
-  #   pipe_through :api
-  # end
+  scope "/api", AwesomeRanking do
+    pipe_through :api
+    resources "/users", UserController, except: [:new, :edit]
+    resources "/scores", ScoreController, except: [:new, :edit, :delete, :index]
+  end
 end
