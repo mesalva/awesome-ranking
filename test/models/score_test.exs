@@ -3,7 +3,7 @@ defmodule AwesomeRanking.ScoreTest do
 
   alias AwesomeRanking.Score
 
-  @valid_attrs %{points: 42}
+  @valid_attrs %{user_id: 1, points: 42}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

@@ -28,28 +28,4 @@ defmodule AwesomeRanking.ScoreController do
     score = Repo.get!(Score, id)
     render(conn, "show.json", score: score)
   end
-
-  def update(conn, %{"id" => id, "score" => score_params}) do
-    score = Repo.get!(Score, id)
-    changeset = Score.changeset(score, score_params)
-
-    case Repo.update(changeset) do
-      {:ok, score} ->
-        render(conn, "show.json", score: score)
-      {:error, changeset} ->
-        conn
-        |> put_status(:unprocessable_entity)
-        |> render(AwesomeRanking.ChangesetView, "error.json", changeset: changeset)
-    end
-  end
-
-  def delete(conn, %{"id" => id}) do
-    score = Repo.get!(Score, id)
-
-    # Here we use delete! (with a bang) because we expect
-    # it to always work (and if it does not, it will raise).
-    Repo.delete!(score)
-
-    send_resp(conn, :no_content, "")
-  end
 end

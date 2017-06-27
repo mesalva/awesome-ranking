@@ -12,7 +12,7 @@ defmodule AwesomeRanking.Router do
   pipeline :api do
     plug :accepts, ["json"]
     resources "/users", AwesomeRanking.UserController, except: [:new, :edit]
-    resources "/scores", AwesomeRanking.ScoreController, except: [:new, :edit]
+    resources "/scores", AwesomeRanking.ScoreController, except: [:new, :edit, :delete]
   end
 
   scope "/", AwesomeRanking do
